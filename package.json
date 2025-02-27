@@ -63,10 +63,6 @@
     "lib"
   ],
   "homepage": "https://www.bzsh.design/guide/icon",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Buzaisonghua/bzsh-ui-icons.git"
-  },
   "lint-staged": {
     "*.{vue,js,ts,jsx,tsx,md,json}": "oxlint --fix"
   }
