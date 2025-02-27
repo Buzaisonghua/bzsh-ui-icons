@@ -1,0 +1,32 @@
+<template>
+  <svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg" :class="cls" :style="innerStyle" :fill="fill" @click="onClick"><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2Zm-3.566 15.604a26.752 26.752 0 0 0 2.42-1.701C18.335 14.533 20 11.943 20 9c0-2.36-1.537-4-3.5-4-1.076 0-2.24.57-3.086 1.414L12 7.828l-1.414-1.414C9.74 5.57 8.576 5 7.5 5 5.56 5 4 6.657 4 9c0 2.944 1.666 5.533 4.645 7.903.745.593 1.54 1.146 2.421 1.7.299.189.595.37.934.572.339-.202.635-.383.934-.571Z"></path></svg>
+</template>
+
+<script lang="ts" setup>
+import { computed, CSSProperties } from "vue";
+
+defineOptions({ name: "IconHeart3Line"});
+const props = defineProps({
+  size: { type: String, default: "18px" },
+  fill: { type: String, default: "#595959" },
+  spin: { type: Boolean, default: false },
+  rotate: { type: Number },
+});
+const emits = defineEmits(["click"]);
+
+const name = "bp-icon";
+const cls = computed(() => [name, `${name}-icon-heart3line`, { [`${name}-spin`]: props.spin }]);
+
+const innerStyle = computed(() => {
+  const styles: CSSProperties = {
+    width: props.size,
+    height: props.size,
+    transform: props.rotate ? `rotate(${props.rotate}deg)` : undefined,
+  };
+
+  return styles;
+});
+
+const onClick = (ev: MouseEvent) => emits("click", ev);
+</script>
+

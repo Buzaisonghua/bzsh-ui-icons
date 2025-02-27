@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "jsxFactory": "h",
+      "outDir": "dist",
+      "target": "es2018",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "baseUrl": ".",
+      "sourceMap": false,
+      "noImplicitAny": false,
+      "allowJs": false,
+      "strict": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "removeComments": false,
+      "lib": ["DOM", "ES2020"],
+      "rootDir": ".",
+      "paths": {
+        "@bzsh-icon/*": ["packages/*"]
+      }
+    },
+    "include": ["packages/**/*"],
+    "exclude": ["node_modules", "dist", "**/*.js"]
+  }
+  

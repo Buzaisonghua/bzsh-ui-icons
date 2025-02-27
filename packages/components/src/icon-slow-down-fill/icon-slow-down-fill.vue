@@ -1,0 +1,32 @@
+<template>
+  <svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg" :class="cls" :style="innerStyle" :fill="fill" @click="onClick"><path d="M4 13c0 2.21.895 4.21 2.343 5.657L4.93 20.07A9.969 9.969 0 0 1 2 13C2 7.477 6.477 3 12 3s10 4.477 10 10a9.97 9.97 0 0 1-2.929 7.071l-1.414-1.414A8 8 0 1 0 4 13Zm4.707-4.707L13.5 12.5l-2 2-4.207-4.793 1.414-1.414Z"></path></svg>
+</template>
+
+<script lang="ts" setup>
+import { computed, CSSProperties } from "vue";
+
+defineOptions({ name: "IconSlowDownFill"});
+const props = defineProps({
+  size: { type: String, default: "18px" },
+  fill: { type: String, default: "#595959" },
+  spin: { type: Boolean, default: false },
+  rotate: { type: Number },
+});
+const emits = defineEmits(["click"]);
+
+const name = "bp-icon";
+const cls = computed(() => [name, `${name}-icon-slow-down-fill`, { [`${name}-spin`]: props.spin }]);
+
+const innerStyle = computed(() => {
+  const styles: CSSProperties = {
+    width: props.size,
+    height: props.size,
+    transform: props.rotate ? `rotate(${props.rotate}deg)` : undefined,
+  };
+
+  return styles;
+});
+
+const onClick = (ev: MouseEvent) => emits("click", ev);
+</script>
+
