@@ -1,7 +1,6 @@
 {
   "version": "1.0.0",
   "description": "BzshIcon Workspaces",
-  "packageManager": "pnpm@8.6.4",
   "scripts": {
     "clean": "rimraf dist && pnpm run -r --parallel clean",
     "build": "pnpm run clean && pnpm run -C scripts/build start",
